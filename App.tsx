@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import ProfileCard from './components/ProfileCard';
@@ -78,6 +78,7 @@ function App() {
 
   // Filter Logic
   const filteredJobs = MOCK_JOBS.filter(job => {
+    // If a filter category has selections, the job must match one of the selected values
     if (locationFilters.length > 0 && !locationFilters.includes(job.location)) return false;
     if (typeFilters.length > 0 && !typeFilters.includes(job.type)) return false;
     if (companyFilters.length > 0 && !companyFilters.includes(job.company)) return false;

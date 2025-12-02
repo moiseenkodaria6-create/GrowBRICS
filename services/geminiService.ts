@@ -1,5 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
+declare const process: { env: { API_KEY: string } };
+
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const analyzeJob = async (jobTitle: string, jobDescription: string, userRole: string): Promise<string> => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Sparkles, Loader2, Target, BookOpen, CheckCircle } from 'lucide-react';
+import { X, Sparkles, Loader2, Target, BookOpen } from 'lucide-react';
 import { Job, UserProfile } from '../types';
 import { analyzeJob } from '../services/geminiService';
 import Markdown from 'react-markdown';

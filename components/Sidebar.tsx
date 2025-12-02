@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Briefcase, FileText, User, Heart, Settings, LogOut } from 'lucide-react';
+import { Home, Briefcase, FileText, User, Heart, Settings } from 'lucide-react';
 
 interface SidebarProps {
   activeTab: string;
