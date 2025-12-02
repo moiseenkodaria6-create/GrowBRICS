@@ -1,11 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const analyzeJob = async (jobTitle: string, jobDescription: string, userRole: string): Promise<string> => {
   try {
-    const model = ai.models;
-    
     const prompt = `
       You are a career coach. 
       I am a ${userRole}.
@@ -17,7 +15,7 @@ export const analyzeJob = async (jobTitle: string, jobDescription: string, userR
       Focus on key skills to highlight. Keep it encouraging and professional.
     `;
 
-    const response = await model.generateContent({
+    const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: prompt,
     });
